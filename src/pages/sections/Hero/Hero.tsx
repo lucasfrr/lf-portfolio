@@ -24,7 +24,7 @@ const Hero = () => {
             paddingTop: "0",
             height: "100vh",
             h1: {
-                fontSize: "9px"
+                fontSize: "95px"
             },
             h2: {
                 fontSize: "30px"
