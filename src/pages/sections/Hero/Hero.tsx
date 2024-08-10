@@ -11,7 +11,14 @@ const Hero = () => {
         backgroundColor: theme.palette.primary.main,
         height: "100vh",
         display: "flex",
-        alignItems: "center"
+        alignItems: "center",
+        [theme.breakpoints.up("xs")]: {
+            paddingTop: "50px"
+        },
+        [theme.breakpoints.up("md")]: {
+            paddingTop: "0",
+            height: "100vh"
+        }
     }))
 
     const StyledImg = styled("img")(({ theme }) => ({
@@ -26,7 +33,9 @@ const Hero = () => {
                 <Container maxWidth="lg">
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={5}>
+                            <Box position="relative" textAlign="center">
                             <StyledImg src={Avatar}/>
+                            </Box>
                         </Grid>
                         <Grid item xs={12} md={7}>
                             <Typography color="primary.contrastText" variant="h1" textAlign="center" pt={4}>Lucas Ferreira</Typography>
