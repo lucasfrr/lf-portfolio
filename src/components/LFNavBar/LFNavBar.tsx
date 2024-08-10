@@ -19,9 +19,6 @@ const LFNavBar = () => {
                     <MenuItem>
                         Projects
                     </MenuItem>
-                    <MenuItem>
-                        Blog
-                    </MenuItem>
                 </LFToolBar>
             </AppBar>
         </>

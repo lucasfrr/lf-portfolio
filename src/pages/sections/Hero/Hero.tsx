@@ -12,11 +12,23 @@ const Hero = () => {
         display: "flex",
         alignItems: "center",
         [theme.breakpoints.up("xs")]: {
-            paddingTop: "50px"
+            paddingTop: "50px",
+            h1: {
+                fontSize: "70px"
+            },
+            h2: {
+                fontSize: "30px"
+            }
         },
         [theme.breakpoints.up("md")]: {
             paddingTop: "0",
-            height: "100vh"
+            height: "100vh",
+            h1: {
+                fontSize: "9px"
+            },
+            h2: {
+                fontSize: "30px"
+            }
         }
     }))
 
