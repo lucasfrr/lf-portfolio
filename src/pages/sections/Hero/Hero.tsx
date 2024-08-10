@@ -1,4 +1,4 @@
-import { Container, Grid, styled, Typography } from "@mui/material"
+import { Box, Container, Grid, styled, Typography } from "@mui/material"
 import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
 
@@ -9,7 +9,6 @@ const Hero = () => {
 
     const StyledHero = styled("div")(({ theme }) => ({
         backgroundColor: theme.palette.primary.main,
-        height: "100vh",
         display: "flex",
         alignItems: "center",
         [theme.breakpoints.up("xs")]: {
@@ -34,7 +33,7 @@ const Hero = () => {
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={5}>
                             <Box position="relative" textAlign="center">
-                            <StyledImg src={Avatar}/>
+                                <StyledImg src={Avatar}/>
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={7}>
@@ -43,13 +42,13 @@ const Hero = () => {
                             
                             <Grid container display="flex" justifyContent="center" spacing={3} pt={8}>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                                    <LFButton>
+                                    <LFButton onClick={() => window.alert("Download")}>
                                         <DownloadIcon />
                                         <Typography>Download CV</Typography>
                                     </LFButton>
                                 </Grid>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                                    <LFButton>
+                                    <LFButton onClick={() => window.alert("email")}>
                                         <EmailIcon />
                                         <Typography>Contact Me</Typography>
                                     </LFButton>

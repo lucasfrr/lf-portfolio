@@ -2,10 +2,11 @@ import { styled } from "@mui/material"
 import { ReactNode } from "react"
 
 interface LFButtonProps {
-    children: ReactNode
+    children: ReactNode,
+    onClick: () => void
 }
 
-const LFButton: React.FC<LFButtonProps> = ({ children }) => {
+const LFButton: React.FC<LFButtonProps> = ({ children, onClick }) => {
     const LFButton = styled("button")(({ theme }) => ({
         backgroundColor: "transparent",
         border: `1px solid ${theme.palette.primary.contrastText}`,
@@ -25,7 +26,7 @@ const LFButton: React.FC<LFButtonProps> = ({ children }) => {
 
     return (
         <>
-            <LFButton>{children}</LFButton>
+            <LFButton onClick={onClick}>{children}</LFButton>
         </>
     )
 }
