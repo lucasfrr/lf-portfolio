@@ -35,7 +35,12 @@ const Hero = () => {
     const StyledImg = styled("img")(({ theme }) => ({
         width: "85%",
         border: `2px solid ${theme.palette.primary.contrastText}`,
-        borderRadius: "50%"
+        borderRadius: "50%",
+        transition: "border-color 0.5s, background-color 0.5s",
+        '&:hover': {
+            backgroundColor: theme.palette.info.main,
+            border: `1px solid ${theme.palette.info.dark}`
+        }
     }))
 
     return (
