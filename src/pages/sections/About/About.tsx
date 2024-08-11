@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Container, Grid, styled, Typography } from "@mui/material"
+import { Box, Card, CardContent, Container, Grid, Paper, Stack, styled, Typography } from "@mui/material"
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import SchoolIcon from '@mui/icons-material/School';
 
@@ -17,6 +17,7 @@ const About = () => {
             }
         },
         [theme.breakpoints.up("md")]: {
+            height: "100vh",
             h1: {
                 fontSize: "80px"
             },
@@ -24,6 +25,13 @@ const About = () => {
                 fontSize: "30px"
             }
         }
+    }))
+
+    const StyledPaper = styled(Paper)(({ theme }) => ({
+        width: 150,
+        height: 50,
+        textAlign: "center",
+        backgroundColor: theme.palette.secondary.main
     }))
 
     return (
@@ -34,14 +42,14 @@ const About = () => {
                     <Grid container spacing={2}>
                     
                         <Grid item xs={12}>
-                            <Typography color="primary.main" variant="h1" textAlign="center" pt={4}>
+                            <Typography color="primary.main" variant="h1" textAlign="center">
                                 About Me
                             </Typography>
                         </Grid>
                         <Grid container pt={5} display="flex" justifyContent="center" spacing={3}>
 
                             <Grid item>
-                                <Card sx={{ width: 300, height: 180 }} variant="outlined">
+                                <Card sx={{ width: 300, height: 180, backgroundColor: "#F2F2F2"}} variant="outlined">
                                     <CardContent>
                                         <Box display="flex" alignItems="center" justifyContent="center">
                                             <WorkspacePremiumIcon />
@@ -54,7 +62,7 @@ const About = () => {
                             </Grid>
 
                             <Grid item>
-                                <Card sx={{ width: 300, height: 180 }} variant="outlined">
+                                <Card sx={{ width: 300, height: 180, backgroundColor: "#F2F2F2"}} variant="outlined">
                                     <CardContent>
                                         <Box display="flex" alignItems="center" justifyContent="center">
                                             <SchoolIcon />
@@ -83,8 +91,36 @@ const About = () => {
                                 <Typography variant="h1" textAlign="center" pt={5}>Skills</Typography>
                             </Grid>
 
-                            <Grid item>
-                                qqwr coisa
+                            <Grid item md={12} xs={4} display="flex" justifyContent="center">
+                                <Stack direction="row" alignItems="center" spacing={2}>
+                                    <StyledPaper variant="outlined">
+                                        <Typography pt={2}>Python</Typography>
+                                    </StyledPaper>
+                                    <StyledPaper variant="outlined">
+                                        <Typography pt={2}>Django</Typography>
+                                    </StyledPaper><StyledPaper variant="outlined">
+                                        <Typography pt={2}>Flask</Typography>
+                                    </StyledPaper><StyledPaper variant="outlined">
+                                        <Typography pt={2}>Go</Typography>
+                                    </StyledPaper><StyledPaper variant="outlined">
+                                        <Typography pt={2}>Web Scrapping</Typography>
+                                    </StyledPaper>
+                                </Stack>
+                            </Grid>
+                            <Grid item md={12} xs={4} display="flex" justifyContent="center">
+                                <Stack direction="row" alignItems="center" spacing={2}>
+                                <StyledPaper variant="outlined">
+                                        <Typography pt={2}>Postgres</Typography>
+                                    </StyledPaper><StyledPaper variant="outlined">
+                                        <Typography pt={2}>ElasticSearch</Typography>
+                                    </StyledPaper><StyledPaper variant="outlined">
+                                        <Typography pt={2}>Git</Typography>
+                                    </StyledPaper><StyledPaper variant="outlined">
+                                        <Typography pt={2}>Docker</Typography>
+                                    </StyledPaper><StyledPaper variant="outlined">
+                                        <Typography pt={2}>AWS</Typography>
+                                    </StyledPaper>
+                                </Stack>
                             </Grid>
                             
                         </Grid>
