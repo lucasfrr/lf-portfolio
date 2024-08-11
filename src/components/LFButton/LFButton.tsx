@@ -20,7 +20,8 @@ const LFButton: React.FC<LFButtonProps> = ({ children, onClick }) => {
         gap: "10px",
         transition: "border-color 0.5s, background-color 0.5s",
         '&:hover': {
-            backgroundColor: theme.palette.secondary.dark
+            backgroundColor: theme.palette.info.main,
+            border: `1px solid ${theme.palette.info.dark}`
         }
     }))
 
