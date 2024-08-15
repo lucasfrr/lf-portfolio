@@ -31,7 +31,14 @@ const About = () => {
         width: 150,
         height: 50,
         textAlign: "center",
-        backgroundColor: theme.palette.secondary.main
+        backgroundColor: theme.palette.secondary.main,
+        transition: "border-color 0.5s, background-color 0.5s",
+        '&:hover': {
+            // backgroundColor: theme.palette.info.main,
+            border: `1px solid ${theme.palette.info.main}`,
+            color: theme.palette.info.main
+            
+        }
     }))
 
     return (
@@ -49,7 +56,17 @@ const About = () => {
                         <Grid container pt={5} display="flex" justifyContent="center" spacing={3}>
 
                             <Grid item>
-                                <Card sx={{ width: 300, height: 180, backgroundColor: "#F2F2F2"}} variant="outlined">
+                                <Card sx={{
+                                            width: 300,
+                                            height: 180,
+                                            backgroundColor: "#F2F2F2",
+                                            transition: "border-color 0.5s, background-color 0.5s",
+                                            '&:hover': {
+                                                // backgroundColor: "#4527A0",
+                                                border: "1px solid #4527A0",
+                                                color: "#4527A0"
+                                            }
+                                        }} variant="outlined">
                                     <CardContent>
                                         <Box display="flex" alignItems="center" justifyContent="center">
                                             <WorkspacePremiumIcon />
@@ -62,7 +79,17 @@ const About = () => {
                             </Grid>
 
                             <Grid item>
-                                <Card sx={{ width: 300, height: 180, backgroundColor: "#F2F2F2"}} variant="outlined">
+                                <Card sx={{
+                                    width: 300,
+                                    height: 180,
+                                    backgroundColor: "#F2F2F2",
+                                    transition: "border-color 0.5s, background-color 0.5s",
+                                    '&:hover': {
+                                        // backgroundColor: "#4527A0",
+                                        border: "1px solid #4527A0",
+                                        color: "#4527A0"
+                                    }
+                                }} variant="outlined">
                                     <CardContent>
                                         <Box display="flex" alignItems="center" justifyContent="center">
                                             <SchoolIcon />
@@ -77,7 +104,7 @@ const About = () => {
                         </Grid>
 
                         <Grid container spacing={2}>
-                            <Typography textAlign="justify" pt={7}>
+                            <Typography textAlign="justify" pt={5} pl={4}>
                                 Mussum Ipsum, cacilds vidis litro abertis.  Copo furadis é disculpa de bebadis, arcu quam euismod magna.
                                 Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Morbi viverra placerat justo, vel pharetra turpis.
                                 Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.
