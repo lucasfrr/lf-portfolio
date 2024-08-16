@@ -100,6 +100,8 @@ const Hero = () => {
 
     const cvPtLink = "https://docs.google.com/document/d/18IP8h8ai94lE2Gk71Oex0aAos9mTB7UybGOZn8WpOxY/pub"
     const cvEnLink = "https://docs.google.com/document/d/1asqcqWN2-J26qBHVMXL4_-VTLU_9TH6hZt9AwWG58MM/pub"
+    const gitHubLink = "https://github.com/lvcax"
+    const linkedInLink = "https://www.linkedin.com/in/lucasferreiraos/"
 
     return (
         <>
@@ -116,6 +118,7 @@ const Hero = () => {
                         
                     </Box>
                 </Grid>
+            <StyledHero>
                 <Container maxWidth="lg">
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={5}>
@@ -124,14 +127,29 @@ const Hero = () => {
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={7}>
-                            <Typography color="primary.contrastText" variant="h1" textAlign="center" pt={4}>Lucas Ferreira</Typography>
+                            <Typography color="primary.contrastText" variant="h1" textAlign="center">Lucas Ferreira</Typography>
                             <Typography color="primary.contrastText" variant="h2" textAlign="center">{t("softwareDev")}</Typography>
                             
-                            <Grid container display="flex" justifyContent="center" spacing={3} pt={8}>
+                            <Grid container display="flex" justifyContent="center" pt={3}>
+                                <Typography color="primary.contrastText" variant="h3" textAlign="center">{t("findMe")}</Typography>
+                            </Grid>
+
+                            <Grid container display="flex" justifyContent="center" pt={2}>
+                                <Stack direction="row" alignItems="center" spacing={2}>
+                                    <Link target="_blank" href={gitHubLink}>
+                                        <GitHubIcon sx={{color: theme.palette.secondary.main}} />
+                                    </Link>
+                                    <Link target="_blank" href={linkedInLink}>
+                                        <LinkedInIcon sx={{color: theme.palette.secondary.main}} />
+                                    </Link>
+                                </Stack>
+                            </Grid>
+                            
+                            <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
                                     <LFButton onClick={handleClickOpenDialog}>
                                         <DownloadIcon />
-                                        <Typography>Download CV</Typography>
+                                        <Typography>{t("downloadCV")}</Typography>
                                     </LFButton>
                                     <React.Fragment>
                                         <Dialog
@@ -146,10 +164,10 @@ const Hero = () => {
                                                 <DialogTitle>{t("dialogTitle")}</DialogTitle>
                                                 <DialogContentText id="alert-dialog-cv-download">
                                                     <Typography textAlign="center">
-                                                        <Link href={cvPtLink}>{t("dialogPT")}</Link>
+                                                        <Link target="_blank" href={cvPtLink}>{t("dialogPT")}</Link>
                                                     </Typography>
                                                     <Typography textAlign="center">
-                                                        <Link href={cvEnLink}>{t("dialogEN")}</Link>
+                                                        <Link target="_blank" href={cvEnLink}>{t("dialogEN")}</Link>
                                                     </Typography>
                                                 </DialogContentText>
                                             </DialogContent>
