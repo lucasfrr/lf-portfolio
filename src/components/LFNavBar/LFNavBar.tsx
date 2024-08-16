@@ -1,4 +1,5 @@
 import { AppBar, MenuItem, styled, Toolbar } from "@mui/material"
+import { t } from "i18next"
 
 const LFNavBar = () => {
     const LFToolBar = styled(Toolbar)(() => ({
@@ -11,13 +12,13 @@ const LFNavBar = () => {
             <AppBar position="relative">
                 <LFToolBar>
                     <MenuItem>
-                        About
+                        {t("about")}
                     </MenuItem>
                     <MenuItem>
                         Skills
                     </MenuItem>
                     <MenuItem>
-                        Projects
+                        {t("projects")}
                     </MenuItem>
                 </LFToolBar>
             </AppBar>

@@ -1,0 +1,19 @@
+{
+    "translation": {
+        "softwareDev": "Desenvolvedor de software",
+        "footer": "nosso footer {{year}}",
+        "about": "Sobre mim",
+        "projects": "Projetos",
+        "experience": "Experiência",
+        "howLong": "2 anos",
+        "role": "Desenvolvimento backend",
+        "education": "Educação",
+        "degree": "Graduação",
+        "computerScience": "Ciência da Computação",
+        "shortResume": "",
+        "dialogTitle": "Baixe a versão do seu idioma de preferência",
+        "dialogPT": "CV em Português",
+        "dialogEN": "CV em Inglês",
+        "close": "Fechar"
+    }
+}

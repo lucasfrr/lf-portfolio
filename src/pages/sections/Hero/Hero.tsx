@@ -1,11 +1,35 @@
-import { Box, Button, Container, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, Link, Slide, styled, Typography, useMediaQuery, useTheme } from "@mui/material"
+import { 
+    Box,
+    Button,
+    Container,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+    Grid,
+    Link,
+    Slide,
+    styled,
+    Typography,
+    useMediaQuery,
+    useTheme
+} from "@mui/material"
 import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
 
 import Avatar from "../../../assets/images/avatar.jpg"
+import Brazil from "../../../assets/images/brazil.png"
+import UnitedKingdom from "../../../assets/images/united-kingdom.png"
 import LFButton from "../../../components/LFButton/LFButton";
 import { TransitionProps } from "@mui/material/transitions";
 import React from "react";
+import LangButton from "../../../components/LangButton/LangButton";
+import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import LFNavBar from "../../../components/LFNavBar/LFNavBar";
+import About from "../About/About";
+import Projects from "../Projects/Projects";
 
 const Hero = () => {
 
@@ -45,6 +69,11 @@ const Hero = () => {
         }
     }))
 
+    const FlagImg = styled("img")(() => ({
+        width: "1.6em",
+        height: "1.6em",
+    }))
+
     const Transition = React.forwardRef(function Transition(
         props: TransitionProps & {
             children: React.ReactElement<any, any>;
@@ -54,18 +83,39 @@ const Hero = () => {
         return <Slide direction="up" ref={ref} {...props} />
     })
 
-    const [open, setOpen] = React.useState(false)
-    const handleClickOpen = () => {setOpen(true)}
-    const handleClose = () => {setOpen(false)}
+    const { t, i18n: {changeLanguage, language}} = useTranslation()
+    const [currentlanguage, setCurrentLanguage] = useState(language)
+    
+    const handleChangelanguage = () => {
+        const newLanguage = currentlanguage === "pt" ? "en": "pt"
+        changeLanguage(newLanguage)
+        setCurrentLanguage(newLanguage)
+    }
+
+    const [openDialog, setOpenDialog] = React.useState(false)
+    const handleClickOpenDialog = () => {setOpenDialog(true)}
+    const handleCloseDialog = () => {setOpenDialog(false)}
     const theme = useTheme()
     const fullScreen = useMediaQuery(theme.breakpoints.down("md"))
 
-    const cvPortuguese = "https://docs.google.com/document/d/18IP8h8ai94lE2Gk71Oex0aAos9mTB7UybGOZn8WpOxY/pub"
-    const cvEnglish = "https://docs.google.com/document/d/1asqcqWN2-J26qBHVMXL4_-VTLU_9TH6hZt9AwWG58MM/pub"
+    const cvPtLink = "https://docs.google.com/document/d/18IP8h8ai94lE2Gk71Oex0aAos9mTB7UybGOZn8WpOxY/pub"
+    const cvEnLink = "https://docs.google.com/document/d/1asqcqWN2-J26qBHVMXL4_-VTLU_9TH6hZt9AwWG58MM/pub"
 
     return (
         <>
+            <LFNavBar />
             <StyledHero>
+                <Grid item>
+                    <Box>
+                        <LangButton onClick={handleChangelanguage}>
+                            {currentlanguage === "pt" ?
+                                <><Typography>View in english</Typography><FlagImg src={UnitedKingdom} /></> :
+                                <><Typography>Ver em Português</Typography><FlagImg src={Brazil} /></>
+                            }
+                        </LangButton>
+                        
+                    </Box>
+                </Grid>
                 <Container maxWidth="lg">
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={5}>
@@ -75,36 +125,36 @@ const Hero = () => {
                         </Grid>
                         <Grid item xs={12} md={7}>
                             <Typography color="primary.contrastText" variant="h1" textAlign="center" pt={4}>Lucas Ferreira</Typography>
-                            <Typography color="primary.contrastText" variant="h2" textAlign="center">Software Developer</Typography>
+                            <Typography color="primary.contrastText" variant="h2" textAlign="center">{t("softwareDev")}</Typography>
                             
                             <Grid container display="flex" justifyContent="center" spacing={3} pt={8}>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                                    <LFButton onClick={handleClickOpen}>
+                                    <LFButton onClick={handleClickOpenDialog}>
                                         <DownloadIcon />
                                         <Typography>Download CV</Typography>
                                     </LFButton>
                                     <React.Fragment>
                                         <Dialog
                                             fullScreen={fullScreen}
-                                            open={open}
+                                            open={openDialog}
                                             TransitionComponent={Transition}
                                             keepMounted
-                                            onClose={handleClose}
+                                            onClose={handleCloseDialog}
                                             aria-describedby="alert-dialog-cv-download"
                                         >
                                             <DialogContent>
-                                                <DialogTitle>{"Escolha o idioma"}</DialogTitle>
+                                                <DialogTitle>{t("dialogTitle")}</DialogTitle>
                                                 <DialogContentText id="alert-dialog-cv-download">
                                                     <Typography textAlign="center">
-                                                        <Link href={cvPortuguese}>CV em português</Link>
+                                                        <Link href={cvPtLink}>{t("dialogPT")}</Link>
                                                     </Typography>
                                                     <Typography textAlign="center">
-                                                        <Link href={cvEnglish}>CV in english</Link>
+                                                        <Link href={cvEnLink}>{t("dialogEN")}</Link>
                                                     </Typography>
                                                 </DialogContentText>
                                             </DialogContent>
                                             <DialogActions>
-                                                <Button onClick={handleClose}>Fechar</Button>
+                                                <Button onClick={handleCloseDialog}>{t("close")}</Button>
                                             </DialogActions>
                                         </Dialog>
                                     </React.Fragment>
@@ -120,6 +170,8 @@ const Hero = () => {
                     </Grid>
                 </Container>
             </StyledHero>
+            <About />
+            <Projects />
         </>
     )
 }

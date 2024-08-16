@@ -1,0 +1,19 @@
+{
+    "translation": {
+        "softwareDev": "Software Developer",
+        "footer": "nosso footer {{year}}",
+        "about": "About me",
+        "projects": "Projects",
+        "experience": "Experience",
+        "howLong": "2 years",
+        "role": "Backend development",
+        "education": "Education",
+        "degree": "Bachelor's degree",
+        "computerScience": "Computer Science",
+        "shortResume": "",
+        "dialogTitle": "Download CV in your language preference",
+        "dialogPT": "CV in Portuguese",
+        "dialogEN": "CV in English",
+        "close": "Close"
+    }
+}

@@ -1,13 +1,10 @@
-import LFNavBar from "../../components/LFNavBar/LFNavBar"
-import About from "../sections/About/About"
 import Hero from "../sections/Hero/Hero"
+import "../../utils/i18n"
 
 const Home = () => {
     return (
         <>  
-            <LFNavBar />
             <Hero />
-            <About />
         </>
     )
 }

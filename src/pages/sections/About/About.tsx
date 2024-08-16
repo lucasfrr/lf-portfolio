@@ -1,6 +1,7 @@
 import { Box, Card, CardContent, Container, Grid, Paper, Stack, styled, Typography } from "@mui/material"
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import SchoolIcon from '@mui/icons-material/School';
+import { t } from "i18next";
 
 const About = () => {
 
@@ -50,7 +51,7 @@ const About = () => {
                     
                         <Grid item xs={12}>
                             <Typography color="primary.main" variant="h1" textAlign="center">
-                                About Me
+                                {t("about")}
                             </Typography>
                         </Grid>
                         <Grid container pt={5} display="flex" justifyContent="center" spacing={3}>
@@ -62,7 +63,6 @@ const About = () => {
                                             backgroundColor: "#F2F2F2",
                                             transition: "border-color 0.5s, background-color 0.5s",
                                             '&:hover': {
-                                                // backgroundColor: "#4527A0",
                                                 border: "1px solid #4527A0",
                                                 color: "#4527A0"
                                             }
@@ -71,9 +71,9 @@ const About = () => {
                                         <Box display="flex" alignItems="center" justifyContent="center">
                                             <WorkspacePremiumIcon />
                                         </Box>
-                                        <Typography textAlign="center" pt={2}><b>Experience</b></Typography>
-                                        <Typography textAlign="center">2 years</Typography>
-                                        <Typography textAlign="center">Backend Development</Typography>
+                                        <Typography textAlign="center" pt={2}><b>{t("experience")}</b></Typography>
+                                        <Typography textAlign="center">{t("howLong")}</Typography>
+                                        <Typography textAlign="center">{t("role")}</Typography>
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -85,7 +85,6 @@ const About = () => {
                                     backgroundColor: "#F2F2F2",
                                     transition: "border-color 0.5s, background-color 0.5s",
                                     '&:hover': {
-                                        // backgroundColor: "#4527A0",
                                         border: "1px solid #4527A0",
                                         color: "#4527A0"
                                     }
@@ -94,9 +93,9 @@ const About = () => {
                                         <Box display="flex" alignItems="center" justifyContent="center">
                                             <SchoolIcon />
                                         </Box>
-                                        <Typography textAlign="center" pt={2}><b>Education</b></Typography>
-                                        <Typography textAlign="center">Bachelor's Degree</Typography>
-                                        <Typography textAlign="center">Computer Science</Typography>
+                                        <Typography textAlign="center" pt={2}><b>{t("education")}</b></Typography>
+                                        <Typography textAlign="center">{t("degree")}</Typography>
+                                        <Typography textAlign="center">{t("computerScience")}</Typography>
                                     </CardContent>
                                 </Card>
                             </Grid>
@@ -119,7 +118,11 @@ const About = () => {
                             </Grid>
 
                             <Grid item md={12} xs={4} display="flex" justifyContent="center">
-                                <Stack direction="row" alignItems="center" spacing={2}>
+                                <Stack
+                                    direction={{ xs: "column", md: "row" }}
+                                    spacing={2}
+                                    alignItems="center"
+                                >
                                     <StyledPaper variant="outlined">
                                         <Typography pt={2}>Python</Typography>
                                     </StyledPaper>
@@ -135,7 +138,11 @@ const About = () => {
                                 </Stack>
                             </Grid>
                             <Grid item md={12} xs={4} display="flex" justifyContent="center">
-                                <Stack direction="row" alignItems="center" spacing={2}>
+                                <Stack
+                                    direction={{ xs: "column", md: "row" }}
+                                    spacing={2}
+                                    alignItems="center"
+                                >
                                 <StyledPaper variant="outlined">
                                         <Typography pt={2}>Postgres</Typography>
                                     </StyledPaper><StyledPaper variant="outlined">
