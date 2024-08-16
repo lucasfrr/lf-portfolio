@@ -35,7 +35,6 @@ const About = () => {
         backgroundColor: theme.palette.secondary.main,
         transition: "border-color 0.5s, background-color 0.5s",
         '&:hover': {
-            // backgroundColor: theme.palette.info.main,
             border: `1px solid ${theme.palette.info.main}`,
             color: theme.palette.info.main
             

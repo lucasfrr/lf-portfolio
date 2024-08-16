@@ -1,4 +1,5 @@
 import { Container, Grid, styled, Typography } from "@mui/material"
+import { t } from "i18next"
 
 const Projects = () => {
 
@@ -8,22 +9,16 @@ const Projects = () => {
         alignItems: "center",
         [theme.breakpoints.up("xs")]: {
             paddingTop: "50px",
-            h1: {
-                fontSize: "70px"
-            },
-            h2: {
-                fontSize: "30px"
-            }
+            h1: {fontSize: "95px"},
+            h2: {fontSize: "30px"},
+            h3: {fontSize: "18px"}
         },
         [theme.breakpoints.up("md")]: {
             paddingTop: "0",
             height: "100vh",
-            h1: {
-                fontSize: "95px"
-            },
-            h2: {
-                fontSize: "30px"
-            }
+            h1: {fontSize: "95px"},
+            h2: {fontSize: "30px"},
+            h3: {fontSize: "18px"}
         }
         
     }))
@@ -34,7 +29,10 @@ const Projects = () => {
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
                             <Typography color="secondary.main" variant="h1" textAlign="center">
-                                Projects
+                                {t("projects")}
+                            </Typography>
+                            <Typography color="secondary.main" variant="h3" textAlign="center" pt={2}>
+                                {t("comingSoon")}
                             </Typography>
                         </Grid>
                     </Grid>

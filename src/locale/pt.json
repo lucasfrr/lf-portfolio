@@ -14,6 +14,9 @@
         "dialogTitle": "Baixe a versão do seu idioma de preferência",
         "dialogPT": "CV em Português",
         "dialogEN": "CV em Inglês",
-        "close": "Fechar"
+        "close": "Fechar",
+        "findMe": "Me encontre no:",
+        "downloadCV": "Baixar CV",
+        "comingSoon": "em breve..."
     }
 }

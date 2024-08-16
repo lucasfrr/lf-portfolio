@@ -14,6 +14,9 @@
         "dialogTitle": "Download CV in your language preference",
         "dialogPT": "CV in Portuguese",
         "dialogEN": "CV in English",
-        "close": "Close"
+        "close": "Close",
+        "findMe": "Find me in:",
+        "downloadCV": "Download CV",
+        "comingSoon": "coming soon..."
     }
 }
