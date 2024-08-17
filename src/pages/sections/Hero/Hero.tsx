@@ -10,14 +10,13 @@ import {
     Grid,
     Link,
     Slide,
+    Stack,
     styled,
     Typography,
     useMediaQuery,
     useTheme
 } from "@mui/material"
 import DownloadIcon from '@mui/icons-material/Download';
-import EmailIcon from '@mui/icons-material/Email';
-
 import Avatar from "../../../assets/images/avatar.jpg"
 import Brazil from "../../../assets/images/brazil.png"
 import UnitedKingdom from "../../../assets/images/united-kingdom.png"
@@ -58,12 +57,7 @@ const Hero = () => {
     const StyledImg = styled("img")(({ theme }) => ({
         width: "85%",
         border: `2px solid ${theme.palette.primary.contrastText}`,
-        borderRadius: "50%",
-        transition: "border-color 0.5s, background-color 0.5s",
-        '&:hover': {
-            backgroundColor: theme.palette.info.main,
-            border: `2px solid ${theme.palette.info.dark}`
-        }
+        borderRadius: "50%"
     }))
 
     const FlagImg = styled("img")(() => ({
@@ -108,18 +102,17 @@ const Hero = () => {
     return (
         <>
             <LFNavBar />
-            <StyledHero>
-                <Grid item>
-                    <Box>
-                        <LangButton onClick={handleChangelanguage}>
-                            {currentlanguage === "pt" ?
-                                <><Typography>View in english</Typography><FlagImg src={UnitedKingdom} /></> :
-                                <><Typography>Ver em Português</Typography><FlagImg src={Brazil} /></>
-                            }
-                        </LangButton>
-                        
-                    </Box>
-                </Grid>
+            <Grid sx={{backgroundColor: theme.palette.primary.main}} container pt={1}>
+                <Box>
+                    <LangButton onClick={handleChangelanguage}>
+                        {currentlanguage === "pt" ?
+                            <><Typography>View in english</Typography><FlagImg src={UnitedKingdom} /></> :
+                            <><Typography>Ver em Português</Typography><FlagImg src={Brazil} /></>
+                        }
+                    </LangButton>
+                    
+                </Box>
+            </Grid>
             <StyledHero>
                 <Container maxWidth="lg">
                     <Grid container spacing={2}>
@@ -131,7 +124,6 @@ const Hero = () => {
                         <Grid item xs={12} md={7}>
                             <Typography color="primary.contrastText" variant="h1" textAlign="center">Lucas Ferreira</Typography>
                             <Typography color="primary.contrastText" variant="h2" textAlign="center">{t("softwareDev")}</Typography>
-                            
                             <Grid container display="flex" justifyContent="center" pt={3}>
                                 <Typography color="primary.contrastText" variant="h3" textAlign="center">{t("findMe")}</Typography>
                             </Grid>
@@ -139,10 +131,22 @@ const Hero = () => {
                             <Grid container display="flex" justifyContent="center" pt={2}>
                                 <Stack direction="row" alignItems="center" spacing={2}>
                                     <Link target="_blank" href={gitHubLink}>
-                                        <GitHubIcon sx={{color: theme.palette.secondary.main}} />
+                                        <GitHubIcon sx={{
+                                            color: theme.palette.secondary.main,
+                                            transition: "color 0.5s",
+                                            '&:hover': {
+                                                color: theme.palette.info.main
+                                            }
+                                        }} />
                                     </Link>
                                     <Link target="_blank" href={linkedInLink}>
-                                        <LinkedInIcon sx={{color: theme.palette.secondary.main}} />
+                                        <LinkedInIcon sx={{
+                                            color: theme.palette.secondary.main,
+                                            transition: "color 0.5s",
+                                            '&:hover': {
+                                                color: theme.palette.info.main
+                                            }
+                                        }} />
                                     </Link>
                                 </Stack>
                             </Grid>

@@ -18,10 +18,9 @@ const LangButton: React.FC<LangButtonProps> = ({ children, onClick }) => {
         alignItems: "center",
         justifyContent: "center",
         gap: "10px",
-        transition: "border-color 0.5s, background-color 0.5s",
+        transition: "color 0.5s",
         '&:hover': {
-            // backgroundColor: theme.palette.info.main,
-            border: `1px solid ${theme.palette.info.dark}`
+            color: theme.palette.info.main
         }
     }))
 
