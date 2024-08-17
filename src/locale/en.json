@@ -11,12 +11,17 @@
         "degree": "Bachelor's degree",
         "computerScience": "Computer Science",
         "shortResume": "",
-        "dialogTitle": "Download CV in your language preference",
-        "dialogPT": "CV in Portuguese",
-        "dialogEN": "CV in English",
+        "dialogTitleCV": "Download CV in your language preference",
+        "dialogPTCV": "CV in Portuguese",
+        "dialogENCV": "CV in English",
         "close": "Close",
         "findMe": "Find me in:",
         "downloadCV": "Download CV",
-        "comingSoon": "coming soon..."
+        "sendEmail": "Mail me",
+        "comingSoon": "coming soon...",
+        "dialogMailTitle": "Hi, there! Alright?",
+        "dialogMailMessage1": "Thank you for your interest in contacting me!",
+        "dialogMailMessage2": "Just send an email to",
+        "dialogMailMessage3": "See you soon :)"
     }
 }
