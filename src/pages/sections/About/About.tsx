@@ -111,12 +111,12 @@ const About = () => {
                             </Typography>
                         </Grid>
 
-                        <Grid container spacing={2}>
+                        <Grid container spacing={2} pl={3.5}>
                             <Grid item xs={12}>
                                 <Typography variant="h1" textAlign="center" pt={5}>Skills</Typography>
                             </Grid>
 
-                            <Grid item md={12} xs={4} display="flex" justifyContent="center">
+                            <Grid item md={12} xs={6} display="flex" justifyContent="center">
                                 <Stack
                                     direction={{ xs: "column", md: "row" }}
                                     spacing={2}
@@ -136,7 +136,7 @@ const About = () => {
                                     </StyledPaper>
                                 </Stack>
                             </Grid>
-                            <Grid item md={12} xs={4} display="flex" justifyContent="center">
+                            <Grid item md={12} xs={5} display="flex" justifyContent="center">
                                 <Stack
                                     direction={{ xs: "column", md: "row" }}
                                     spacing={2}

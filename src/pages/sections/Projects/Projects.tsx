@@ -9,7 +9,7 @@ const Projects = () => {
         alignItems: "center",
         [theme.breakpoints.up("xs")]: {
             paddingTop: "50px",
-            h1: {fontSize: "95px"},
+            h1: {fontSize: "70px"},
             h2: {fontSize: "30px"},
             h3: {fontSize: "18px"}
         },
