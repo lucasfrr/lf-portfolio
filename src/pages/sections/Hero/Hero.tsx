@@ -30,6 +30,9 @@ import { useState } from "react";
 import LFNavBar from "../../../components/LFNavBar/LFNavBar";
 import About from "../About/About";
 import Projects from "../Projects/Projects";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
 
 const Hero = () => {
 
@@ -39,22 +42,16 @@ const Hero = () => {
         alignItems: "center",
         [theme.breakpoints.up("xs")]: {
             paddingTop: "50px",
-            h1: {
-                fontSize: "70px"
-            },
-            h2: {
-                fontSize: "30px"
-            }
+            h1: {fontSize: "70px"},
+            h2: {fontSize: "30px"},
+            h3: {fontSize: "18px"}
         },
         [theme.breakpoints.up("md")]: {
             paddingTop: "0",
             height: "100vh",
-            h1: {
-                fontSize: "95px"
-            },
-            h2: {
-                fontSize: "30px"
-            }
+            h1: {fontSize: "95px"},
+            h2: {fontSize: "30px"},
+            h3: {fontSize: "18px"}
         }
     }))
 
@@ -92,9 +89,14 @@ const Hero = () => {
         setCurrentLanguage(newLanguage)
     }
 
-    const [openDialog, setOpenDialog] = React.useState(false)
-    const handleClickOpenDialog = () => {setOpenDialog(true)}
-    const handleCloseDialog = () => {setOpenDialog(false)}
+    const [openDialogCV, setOpenDialogCV] = React.useState(false)
+    const handleClickOpenDialogCV = () => {setOpenDialogCV(true)}
+    const handleCloseDialogCV = () => {setOpenDialogCV(false)}
+
+    const [openDialogMail, setOpenDialogMail] = React.useState(false)
+    const handleClickOpenDialogMail = () => {setOpenDialogMail(true)}
+    const handleCloseDialogMail = () => {setOpenDialogMail(false)}
+
     const theme = useTheme()
     const fullScreen = useMediaQuery(theme.breakpoints.down("md"))
 
@@ -147,41 +149,66 @@ const Hero = () => {
                             
                             <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                                    <LFButton onClick={handleClickOpenDialog}>
+                                    <LFButton onClick={handleClickOpenDialogCV}>
                                         <DownloadIcon />
                                         <Typography>{t("downloadCV")}</Typography>
                                     </LFButton>
                                     <React.Fragment>
                                         <Dialog
                                             fullScreen={fullScreen}
-                                            open={openDialog}
+                                            open={openDialogCV}
                                             TransitionComponent={Transition}
                                             keepMounted
-                                            onClose={handleCloseDialog}
+                                            onClose={handleCloseDialogCV}
                                             aria-describedby="alert-dialog-cv-download"
                                         >
                                             <DialogContent>
-                                                <DialogTitle>{t("dialogTitle")}</DialogTitle>
+                                                <DialogTitle textAlign="center">{t("dialogTitleCV")}</DialogTitle>
                                                 <DialogContentText id="alert-dialog-cv-download">
                                                     <Typography textAlign="center">
-                                                        <Link target="_blank" href={cvPtLink}>{t("dialogPT")}</Link>
+                                                        <Link target="_blank" href={cvPtLink}>{t("dialogPTCV")}</Link>
                                                     </Typography>
                                                     <Typography textAlign="center">
-                                                        <Link target="_blank" href={cvEnLink}>{t("dialogEN")}</Link>
+                                                        <Link target="_blank" href={cvEnLink}>{t("dialogENCV")}</Link>
                                                     </Typography>
                                                 </DialogContentText>
                                             </DialogContent>
                                             <DialogActions>
-                                                <Button onClick={handleCloseDialog}>{t("close")}</Button>
+                                                <Button onClick={handleCloseDialogCV}>{t("close")}</Button>
                                             </DialogActions>
                                         </Dialog>
                                     </React.Fragment>
                                 </Grid>
                                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                                    <LFButton onClick={() => window.alert("email")}>
+                                    <LFButton onClick={handleClickOpenDialogMail}>
                                         <EmailIcon />
-                                        <Typography>Contact Me</Typography>
+                                        <Typography>{t("sendEmail")}</Typography>
                                     </LFButton>
+                                    <React.Fragment>
+                                        <Dialog
+                                            fullScreen={fullScreen}
+                                            open={openDialogMail}
+                                            TransitionComponent={Transition}
+                                            keepMounted
+                                            onClose={handleCloseDialogMail}
+                                            aria-describedby="alert-dialog-mail-download"
+                                        >
+                                            <DialogContent>
+                                                <DialogTitle textAlign="center">{t("dialogMailTitle")}</DialogTitle>
+                                                <DialogContentText id="alert-dialog-mail-download">
+                                                    <Typography textAlign="center">{t("dialogMailMessage1")}</Typography>
+                                                    <Typography textAlign="center">{t("dialogMailMessage2")}</Typography>
+                                                    <Typography color={theme.palette.info.main} textAlign="center">
+                                                        <b>lucasferreiraek@gmail.com</b>
+                                                    </Typography>
+                                                    <Typography textAlign="center">{t("dialogMailMessage3")}</Typography>
+                                                </DialogContentText>
+                                            </DialogContent>
+                                            <DialogActions>
+                                                <Button onClick={handleCloseDialogMail}>{t("close")}</Button>
+                                            </DialogActions>
+                                        </Dialog>
+                                    </React.Fragment>
                                 </Grid>
                             </Grid>
                         </Grid>
