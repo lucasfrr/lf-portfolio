@@ -1,4 +1,5 @@
-import { alpha, createTheme, getContrastRatio } from '@mui/material/styles';
+import { alpha, getContrastRatio } from '@mui/material/styles';
+import createTheme from "@mui/material/styles/createTheme";
 
 const darkGray = "#1C1C1C"
 const ghost = "#F2F2F2"
