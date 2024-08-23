@@ -22,6 +22,9 @@
         "dialogMailTitle": "Opa! Tudo bem?",
         "dialogMailMessage1": "Obrigado pelo interesse em vir falar comigo!",
         "dialogMailMessage2": "Para entrar em contato, envie um email para",
-        "dialogMailMessage3": "Até breve :)"
+        "dialogMailMessage3": "Até breve :)",
+        "aboutMeText": "Desenvolvedor backend desde 2020, trabalhando majoritariamente com Python, Django e Flask, com foco em Engenharia de Software, me considero uma pessoa que gosta de fazer ideias tomarem forma e fazer isso em equipe sempre que possível, contribuindo e evoluindo junto aos meus pares. Fora do PC, sou um cara apaixonado por música (espacificamente guitarra), tatuagem, musculação e futebol.",
+        "backHomePage": "Volte para a página principal",
+        "talksWorkshops": "Palestras e minicursos"
     }
 }

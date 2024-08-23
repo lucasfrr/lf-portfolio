@@ -1,5 +1,6 @@
-import { AppBar, MenuItem, styled, Toolbar } from "@mui/material"
+import { AppBar, MenuItem, styled, Toolbar, Typography } from "@mui/material"
 import { t } from "i18next"
+import { Link } from "react-router-dom"
 
 const LFNavBar = () => {
     const LFToolBar = styled(Toolbar)(() => ({
@@ -28,7 +29,12 @@ const LFNavBar = () => {
                     <MenuItem>
                         <Link to="/projects">
                             <Typography color="primary.contrastText">
-                        {t("projects")}
+                                {t("projects")}
+                            </Typography>
+                        </Link>
+                    </MenuItem>
+                    <MenuItem>
+                        {t("talksWorkshops")}
                     </MenuItem>
                 </LFToolBar>
             </AppBar>

@@ -1,3 +1,5 @@
+import React from "react";
+import { useState } from "react";
 import { 
     Box,
     Button,
@@ -11,59 +13,29 @@ import {
     Link,
     Slide,
     Stack,
-    styled,
     Typography,
     useMediaQuery,
     useTheme
 } from "@mui/material"
 import DownloadIcon from '@mui/icons-material/Download';
-import Avatar from "../../../assets/images/avatar.jpg"
-import Brazil from "../../../assets/images/brazil.png"
-import UnitedKingdom from "../../../assets/images/united-kingdom.png"
-import LFButton from "../../../components/LFButton/LFButton";
-import { TransitionProps } from "@mui/material/transitions";
-import React from "react";
-import LangButton from "../../../components/LangButton/LangButton";
-import { useTranslation } from "react-i18next";
-import { useState } from "react";
-import LFNavBar from "../../../components/LFNavBar/LFNavBar";
-import About from "../About/About";
-import Projects from "../Projects/Projects";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
+import { TransitionProps } from "@mui/material/transitions";
+import { useTranslation } from "react-i18next";
+
+import AvatarImg from "../../assets/images/avatar.jpg"
+import Brazil from "../../assets/images/brazil.png"
+import UnitedKingdom from "../../assets/images/united-kingdom.png"
+import LFButton from "../../components/LFButton/LFButton";
+import LangButton from "../../components/LangButton/LangButton";
+import LFNavBar from "../../components/LFNavBar/LFNavBar";
+import LFPageStyle from "../../components/LFPageStyle/LFPageStyle";
+import LFAvatar from "../../components/LFAvatar/LFAvatar";
+import FlagImg from "../../components/FlagImg/FlagImg";
+
 
 const Hero = () => {
-
-    const StyledHero = styled("div")(({ theme }) => ({
-        backgroundColor: theme.palette.primary.main,
-        display: "flex",
-        alignItems: "center",
-        [theme.breakpoints.up("xs")]: {
-            paddingTop: "50px",
-            h1: {fontSize: "70px"},
-            h2: {fontSize: "30px"},
-            h3: {fontSize: "18px"}
-        },
-        [theme.breakpoints.up("md")]: {
-            paddingTop: "0",
-            height: "100vh",
-            h1: {fontSize: "95px"},
-            h2: {fontSize: "30px"},
-            h3: {fontSize: "18px"}
-        }
-    }))
-
-    const StyledImg = styled("img")(({ theme }) => ({
-        width: "85%",
-        border: `2px solid ${theme.palette.primary.contrastText}`,
-        borderRadius: "50%"
-    }))
-
-    const FlagImg = styled("img")(() => ({
-        width: "1.6em",
-        height: "1.6em",
-    }))
 
     const Transition = React.forwardRef(function Transition(
         props: TransitionProps & {
@@ -94,10 +66,10 @@ const Hero = () => {
     const theme = useTheme()
     const fullScreen = useMediaQuery(theme.breakpoints.down("md"))
 
-    const cvPtLink = "https://docs.google.com/document/d/18IP8h8ai94lE2Gk71Oex0aAos9mTB7UybGOZn8WpOxY/pub"
-    const cvEnLink = "https://docs.google.com/document/d/1asqcqWN2-J26qBHVMXL4_-VTLU_9TH6hZt9AwWG58MM/pub"
-    const gitHubLink = "https://github.com/lvcax"
-    const linkedInLink = "https://www.linkedin.com/in/lucasferreiraos/"
+    const cvPtLink = "https://drive.google.com/file/d/1FJQLVq9WHm8U7WFTVHBb0_vXSpL2fGBX/view?usp=sharing"
+    const cvEnLink = "https://drive.google.com/file/d/1881QZjCna5i8iu0YsiIXu79LK4SHcBwd/view?usp=sharing"
+    const gitHubLink = "https://github.com/lucasfrr"
+    const linkedInLink = "https://www.linkedin.com/in/lucasfrr"
 
     return (
         <>
@@ -113,12 +85,12 @@ const Hero = () => {
                     
                 </Box>
             </Grid>
-            <StyledHero>
+            <LFPageStyle>
                 <Container maxWidth="lg">
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={5}>
                             <Box position="relative" textAlign="center">
-                                <StyledImg src={Avatar}/>
+                                <LFAvatar src={AvatarImg}/>
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={7}>
@@ -218,9 +190,7 @@ const Hero = () => {
                         </Grid>
                     </Grid>
                 </Container>
-            </StyledHero>
-            <About />
-            <Projects />
+            </LFPageStyle>
         </>
     )
 }

@@ -22,6 +22,9 @@
         "dialogMailTitle": "Hi, there! Alright?",
         "dialogMailMessage1": "Thank you for your interest in contacting me!",
         "dialogMailMessage2": "Just send an email to",
-        "dialogMailMessage3": "See you soon :)"
+        "dialogMailMessage3": "See you soon :)",
+        "aboutMeText": "Backend developer since 2020, working mostly with Python, Django and Flask, with a focus on Software Engineering, I consider myself a person who likes to make ideas take shape and do this as a team whenever possible, contributing and evolving alongside my peers. Outside PC, i'm very passionate for music (specifically guitars), tattoos, gym and soccer.",
+        "backHomePage": "Back to the homepage",
+        "talksWorkshops": "Talks and workshops"
     }
 }
