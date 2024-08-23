@@ -11,7 +11,7 @@ const Routes = createBrowserRouter([
       errorElement: <NotFoundPage />
     },
     {
-      path: "/aboutme",
+      path: "/about-me",
       element: <About />
     },
     {
