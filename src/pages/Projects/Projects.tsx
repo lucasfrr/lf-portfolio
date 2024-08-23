@@ -1,13 +1,14 @@
+import { t } from "i18next";
 import { Container, Grid, Typography } from "@mui/material"
-import { t } from "i18next"
-import LFNavBar from "../../components/LFNavBar/LFNavBar"
+
 import LFPageStyle from "../../components/LFPageStyle/LFPageStyle"
+import LFBar from "../../components/LFBar/LFBar";
 
 const Projects = () => {
 
     return (
         <>  
-            <LFNavBar />
+            <LFBar />
             <LFPageStyle>
                 <Container maxWidth="lg">
                     <Grid container spacing={2}>

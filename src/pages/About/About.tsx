@@ -1,16 +1,17 @@
+import { t } from "i18next";
 import { Box, Card, CardContent, Container, Grid, Stack, Typography } from "@mui/material"
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import SchoolIcon from '@mui/icons-material/School';
-import { t } from "i18next";
+
 import LFPageStyle from "../../components/LFPageStyle/LFPageStyle";
 import LFPaper from "../../components/LFPaper/LFPaper";
-import LFNavBar from "../../components/LFNavBar/LFNavBar";
+import LFBar from "../../components/LFBar/LFBar";
 
 const About = () => {
 
     return (
         <>
-            <LFNavBar />
+            <LFBar />
             <LFPageStyle>
                 <Container maxWidth="lg">
                     <Grid container spacing={2}>

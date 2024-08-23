@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { 
     Box,
     Button,
@@ -17,22 +16,18 @@ import {
     useMediaQuery,
     useTheme
 } from "@mui/material"
+import { t } from "i18next";
 import DownloadIcon from '@mui/icons-material/Download';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import { TransitionProps } from "@mui/material/transitions";
-import { useTranslation } from "react-i18next";
 
 import AvatarImg from "../../assets/images/avatar.jpg"
-import Brazil from "../../assets/images/brazil.png"
-import UnitedKingdom from "../../assets/images/united-kingdom.png"
 import LFButton from "../../components/LFButton/LFButton";
-import LangButton from "../../components/LangButton/LangButton";
-import LFNavBar from "../../components/LFNavBar/LFNavBar";
 import LFPageStyle from "../../components/LFPageStyle/LFPageStyle";
 import LFAvatar from "../../components/LFAvatar/LFAvatar";
-import FlagImg from "../../components/FlagImg/FlagImg";
+import LFBar from "../../components/LFBar/LFBar";
 
 
 const Hero = () => {
@@ -45,15 +40,6 @@ const Hero = () => {
     ) {
         return <Slide direction="up" ref={ref} {...props} />
     })
-
-    const { t, i18n: {changeLanguage, language}} = useTranslation()
-    const [currentlanguage, setCurrentLanguage] = useState(language)
-    
-    const handleChangelanguage = () => {
-        const newLanguage = currentlanguage === "pt" ? "en": "pt"
-        changeLanguage(newLanguage)
-        setCurrentLanguage(newLanguage)
-    }
 
     const [openDialogCV, setOpenDialogCV] = React.useState(false)
     const handleClickOpenDialogCV = () => {setOpenDialogCV(true)}
@@ -73,18 +59,7 @@ const Hero = () => {
 
     return (
         <>
-            <LFNavBar />
-            <Grid sx={{backgroundColor: theme.palette.primary.main}} container pt={1}>
-                <Box>
-                    <LangButton onClick={handleChangelanguage}>
-                        {currentlanguage === "pt" ?
-                            <><Typography>View in english</Typography><FlagImg src={UnitedKingdom} /></> :
-                            <><Typography>Ver em Português</Typography><FlagImg src={Brazil} /></>
-                        }
-                    </LangButton>
-                    
-                </Box>
-            </Grid>
+            <LFBar />
             <LFPageStyle>
                 <Container maxWidth="lg">
                     <Grid container spacing={2}>
