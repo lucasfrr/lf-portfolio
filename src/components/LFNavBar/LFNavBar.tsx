@@ -12,12 +12,22 @@ const LFNavBar = () => {
             <AppBar position="relative">
                 <LFToolBar>
                     <MenuItem>
-                        {t("about")}
+                        <Link to="/">
+                            <Typography color="primary.contrastText">
+                                Home
+                            </Typography>
+                        </Link>
                     </MenuItem>
                     <MenuItem>
-                        Skills
+                        <Link to="/aboutme">
+                            <Typography color="primary.contrastText">
+                                {t("about")}
+                            </Typography>
+                        </Link>
                     </MenuItem>
                     <MenuItem>
+                        <Link to="/projects">
+                            <Typography color="primary.contrastText">
                         {t("projects")}
                     </MenuItem>
                 </LFToolBar>
