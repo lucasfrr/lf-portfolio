@@ -3,6 +3,7 @@ import App from "./App";
 import About from "./pages/About/About";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Projects from "./pages/Projects/Projects";
+import TalksWorkshops from "./pages/TalksWorkshops/TalksWorkshops";
 
 const Routes = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const Routes = createBrowserRouter([
     {
       path: "/projects",
       element: <Projects />
+    },
+    {
+      path: "/talks-and-workshops",
+      element: <TalksWorkshops />
     }
 ])
 
