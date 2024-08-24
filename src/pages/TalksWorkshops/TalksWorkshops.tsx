@@ -8,6 +8,13 @@ import LFPageStyle from "../../components/LFPageStyle/LFPageStyle"
 import LFooter from "../../components/LFooter/LFooter";
 
 const TalksWorkshops = () => {
+
+    const customListParams = {
+        width: '100%',
+        maxWidth: 440,
+        bgcolor: 'background.paper'
+    }
+
     return (
         <>
             <LFBar />
@@ -19,7 +26,7 @@ const TalksWorkshops = () => {
                                 {t("talksWorkshops")}
                             </Typography>
                             <Grid item pt={4} display="flex" justifyContent="center">
-                                <List sx={{ width: '100%', maxWidth: 440, bgcolor: 'background.paper'}}>
+                                <List sx={customListParams}>
                                     <ListItem>
                                         <ListItemAvatar>
                                             <Avatar>

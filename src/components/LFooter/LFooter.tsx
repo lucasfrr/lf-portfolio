@@ -9,7 +9,10 @@ const LFooter = () => {
         width: "100%",
         height: "180px",
         alignItems: "center",
+        h4: {fontSize: "13px"}
     }))
+
+    const customIconParams = { width: "13px", height: "13px" }
 
     return (
         <>
@@ -17,8 +20,8 @@ const LFooter = () => {
                 <Container maxWidth="lg">
                     <Grid display="flex" position="static" container spacing={3}>
                         <Grid item xs={12} alignItems="center" justifyContent="center">
-                            <Typography color="primary.contrastText" textAlign="center">
-                                <CopyrightIcon /> 2024 Lucas Ferreira - All rights reserved
+                            <Typography variant="h4" color="primary.contrastText" textAlign="center">
+                                <CopyrightIcon sx={customIconParams} /> 2024 Lucas Ferreira - All rights reserved
                             </Typography>
                         </Grid>
                     </Grid>

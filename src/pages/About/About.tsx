@@ -10,6 +10,18 @@ import LFooter from "../../components/LFooter/LFooter";
 
 const About = () => {
 
+    const customCardParams = {
+        width: 300,
+        height: 180,
+        backgroundColor: "#1C1C1C",
+        border: "1px solid #2F2F2F",
+        transition: "border-color 0.5s, background-color 0.5s",
+        '&:hover': {
+            border: "1px solid #4527A0",
+            color: "#4527A0"
+        }
+    }
+
     return (
         <>
             <LFBar />
@@ -23,17 +35,7 @@ const About = () => {
                         </Grid>
                         <Grid container pt={3} display="flex" justifyContent="center" spacing={3}>
                             <Grid item>
-                                <Card sx={{
-                                            width: 300,
-                                            height: 180,
-                                            backgroundColor: "#1C1C1C",
-                                            border: "1px solid #2F2F2F",
-                                            transition: "border-color 0.5s, background-color 0.5s",
-                                            '&:hover': {
-                                                border: "1px solid #4527A0",
-                                                color: "#4527A0"
-                                            }
-                                        }} variant="outlined">
+                                <Card sx={customCardParams} variant="outlined">
                                     <CardContent>
                                         <Box display="flex" alignItems="center" justifyContent="center">
                                             <WorkspacePremiumIcon color="secondary"/>
@@ -51,17 +53,7 @@ const About = () => {
                                 </Card>
                             </Grid>
                             <Grid item>
-                                <Card sx={{
-                                    width: 300,
-                                    height: 180,
-                                    backgroundColor: "#1C1C1C",
-                                    border: "1px solid #2F2F2F",
-                                    transition: "border-color 0.5s, background-color 0.5s",
-                                    '&:hover': {
-                                        border: "1px solid #4527A0",
-                                        color: "#4527A0"
-                                    }
-                                }} variant="outlined">
+                                <Card sx={customCardParams} variant="outlined">
                                     <CardContent>
                                         <Box display="flex" alignItems="center" justifyContent="center">
                                             <SchoolIcon color="secondary" />
