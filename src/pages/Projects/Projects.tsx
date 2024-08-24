@@ -3,6 +3,7 @@ import { Container, Grid, Typography } from "@mui/material"
 
 import LFPageStyle from "../../components/LFPageStyle/LFPageStyle"
 import LFBar from "../../components/LFBar/LFBar";
+import LFooter from "../../components/LFooter/LFooter";
 
 const Projects = () => {
 
@@ -23,6 +24,7 @@ const Projects = () => {
                     </Grid>
                 </Container>
             </LFPageStyle>
+            <LFooter />
         </>
     )
 }

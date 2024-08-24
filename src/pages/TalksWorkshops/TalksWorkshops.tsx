@@ -5,6 +5,7 @@ import SchoolIcon from '@mui/icons-material/School';
 
 import LFBar from "../../components/LFBar/LFBar"
 import LFPageStyle from "../../components/LFPageStyle/LFPageStyle"
+import LFooter from "../../components/LFooter/LFooter";
 
 const TalksWorkshops = () => {
     return (
@@ -60,6 +61,7 @@ const TalksWorkshops = () => {
                     </Grid>
                 </Container>
             </LFPageStyle>
+            <LFooter />
         </>
     )
 }

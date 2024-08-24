@@ -6,6 +6,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import LFPageStyle from "../../components/LFPageStyle/LFPageStyle";
 import LFPaper from "../../components/LFPaper/LFPaper";
 import LFBar from "../../components/LFBar/LFBar";
+import LFooter from "../../components/LFooter/LFooter";
 
 const About = () => {
 
@@ -20,7 +21,7 @@ const About = () => {
                                 {t("about")}
                             </Typography>
                         </Grid>
-                        <Grid container pt={5} display="flex" justifyContent="center" spacing={3}>
+                        <Grid container pt={3} display="flex" justifyContent="center" spacing={3}>
                             <Grid item>
                                 <Card sx={{
                                             width: 300,
@@ -35,7 +36,7 @@ const About = () => {
                                         }} variant="outlined">
                                     <CardContent>
                                         <Box display="flex" alignItems="center" justifyContent="center">
-                                            <WorkspacePremiumIcon />
+                                            <WorkspacePremiumIcon color="secondary"/>
                                         </Box>
                                         <Typography color="primary.contrastText" textAlign="center" pt={2}>
                                             <b>{t("experience")}</b>
@@ -63,7 +64,7 @@ const About = () => {
                                 }} variant="outlined">
                                     <CardContent>
                                         <Box display="flex" alignItems="center" justifyContent="center">
-                                            <SchoolIcon />
+                                            <SchoolIcon color="secondary" />
                                         </Box>
                                         <Typography color="primary.contrastText" textAlign="center" pt={2}>
                                             <b>{t("education")}</b>
@@ -85,7 +86,7 @@ const About = () => {
                         </Grid>
                         <Grid container spacing={2} pl={3.5}>
                             <Grid item xs={12}>
-                                <Typography color="primary.contrastText" variant="h1" textAlign="center" pt={5}>Skills</Typography>
+                                <Typography color="primary.contrastText" variant="h1" textAlign="center" pt={3}>Skills</Typography>
                             </Grid>
                             <Grid item md={12} xs={6} display="flex" justifyContent="center">
                                 <Stack
@@ -130,6 +131,7 @@ const About = () => {
                     </Grid>
                 </Container>
             </LFPageStyle>
+            <LFooter />
         </>
     )
 }

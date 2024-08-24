@@ -25,6 +25,10 @@
         "dialogMailMessage3": "Até breve :)",
         "aboutMeText": "Desenvolvedor backend desde 2020, trabalhando majoritariamente com Python, Django e Flask, com foco em Engenharia de Software, me considero uma pessoa que gosta de fazer ideias tomarem forma e fazer isso em equipe sempre que possível, contribuindo e evoluindo junto aos meus pares. Fora do PC, sou um cara apaixonado por música (espacificamente guitarra), tatuagem, musculação e futebol.",
         "backHomePage": "Volte para a página principal",
-        "talksWorkshops": "Palestras e minicursos"
+        "talksWorkshops": "Palestras e minicursos",
+        "rubyOnRailsTitle": "Minicurso Introdução ao Ruby on Rails",
+        "matplotlibTitle": "Minicurso Gráficos em Python: Introdução ao Matplotlib",
+        "mlOnPracticeTitle": "Palestra Machine Learning na Prática",
+        "copyRight": "Todos os direitos reservados"
     }
 }

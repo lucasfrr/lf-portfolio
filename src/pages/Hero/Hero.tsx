@@ -28,6 +28,7 @@ import LFButton from "../../components/LFButton/LFButton";
 import LFPageStyle from "../../components/LFPageStyle/LFPageStyle";
 import LFAvatar from "../../components/LFAvatar/LFAvatar";
 import LFBar from "../../components/LFBar/LFBar";
+import LFooter from "../../components/LFooter/LFooter";
 
 
 const Hero = () => {
@@ -166,6 +167,7 @@ const Hero = () => {
                     </Grid>
                 </Container>
             </LFPageStyle>
+            <LFooter />
         </>
     )
 }
