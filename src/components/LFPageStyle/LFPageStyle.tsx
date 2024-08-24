@@ -14,7 +14,7 @@ const LFPageStyle = styled("div")(({ theme }) => ({
     [theme.breakpoints.up("md")]: {
         paddingTop: "0",
         height: "100vh",
-        h1: {fontSize: "95px"},
+        h1: {fontSize: "80px"},
         h2: {fontSize: "30px"},
         h3: {fontSize: "18px"}
     }
