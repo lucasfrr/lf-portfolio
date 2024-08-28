@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { 
     Box,
     Button,
@@ -16,19 +16,24 @@ import {
     useMediaQuery,
     useTheme
 } from "@mui/material"
-import { t } from "i18next";
 import DownloadIcon from '@mui/icons-material/Download';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import { TransitionProps } from "@mui/material/transitions";
+import { useTranslation } from "react-i18next";
 
 import AvatarImg from "../../assets/images/avatar.jpg"
-import LFButton from "../../components/LFButton/LFButton";
-import LFPageStyle from "../../components/LFPageStyle/LFPageStyle";
+import FlagImg from "../../components/FlagImg/FlagImg";
+import LangButton from "../../components/LangButton/LangButton";
 import LFAvatar from "../../components/LFAvatar/LFAvatar";
 import LFBar from "../../components/LFBar/LFBar";
+import LFButton from "../../components/LFButton/LFButton";
 import LFooter from "../../components/LFooter/LFooter";
+import LFPageStyle from "../../components/LFPageStyle/LFPageStyle";
+
+import Brazil from "../../assets/images/brazil.png";
+import UnitedKingdom from "../../assets/images/united-kingdom.png";
 
 
 const Hero = () => {
@@ -50,6 +55,14 @@ const Hero = () => {
     const handleClickOpenDialogMail = () => {setOpenDialogMail(true)}
     const handleCloseDialogMail = () => {setOpenDialogMail(false)}
 
+    const { t, i18n: {changeLanguage, language}} = useTranslation()
+    const [currentlanguage, setCurrentLanguage] = useState(language)
+    const handleChangelanguage = () => {
+        const newLanguage = currentlanguage === "pt" ? "en": "pt"
+        changeLanguage(newLanguage)
+        setCurrentLanguage(newLanguage)
+    }
+
     const theme = useTheme()
     const fullScreen = useMediaQuery(theme.breakpoints.down("md"))
 
@@ -61,6 +74,14 @@ const Hero = () => {
     return (
         <>
             <LFBar />
+            <Grid bgcolor={theme.palette.primary.main} item>
+                <LangButton onClick={handleChangelanguage}>
+                    {currentlanguage === "pt" ?
+                        <><Typography fontSize="13px">Switch to</Typography><FlagImg src={UnitedKingdom} /></> :
+                        <><Typography fontSize="13px">Mudar para</Typography><FlagImg src={Brazil} /></>
+                    }
+                </LangButton>
+            </Grid>
             <LFPageStyle>
                 <Container maxWidth="lg">
                     <Grid container spacing={2}>

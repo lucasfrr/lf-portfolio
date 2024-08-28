@@ -1,16 +1,10 @@
 import { useState } from "react";
 
-import { AppBar, Box, Drawer, Toolbar, Typography } from "@mui/material"
+import { AppBar, Box, Drawer, Toolbar } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
-import { useTranslation } from "react-i18next";
 
-import FlagImg from "../FlagImg/FlagImg";
-import LangButton from "../LangButton/LangButton";
 import LFDrawer from "../../components/LFDrawer/LFDrawer";
-
-import Brazil from "../../assets/images/brazil.png"
-import UnitedKingdom from "../../assets/images/united-kingdom.png"
 
 const LFBar = () => {
 
@@ -18,14 +12,6 @@ const LFBar = () => {
     const toggleDrawer = (newOpen: boolean) => () => (
         setOpen(newOpen)
     )
-
-    const { i18n: {changeLanguage, language}} = useTranslation()
-    const [currentlanguage, setCurrentLanguage] = useState(language)
-    const handleChangelanguage = () => {
-        const newLanguage = currentlanguage === "pt" ? "en": "pt"
-        changeLanguage(newLanguage)
-        setCurrentLanguage(newLanguage)
-    }
 
     return (
         <>
@@ -45,12 +31,6 @@ const LFBar = () => {
                         <Drawer open={open} onClose={toggleDrawer(false)}>
                             <LFDrawer onClick={toggleDrawer(true)} />
                         </Drawer>
-                        <LangButton onClick={handleChangelanguage}>
-                            {currentlanguage === "pt" ?
-                                <><Typography>View in english</Typography><FlagImg src={UnitedKingdom} /></> :
-                                <><Typography>Ver em Português</Typography><FlagImg src={Brazil} /></>
-                            }
-                        </LangButton>
                     </Toolbar>
                 </AppBar>
             </Box>    

@@ -1,11 +1,18 @@
-import { t } from "i18next"
+import { useState } from "react";
 import { Avatar, Container, Divider, Grid, List, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material"
 import Groups2Icon from '@mui/icons-material/Groups2';
 import SchoolIcon from '@mui/icons-material/School';
+import { useTranslation } from "react-i18next";
 
+import FlagImg from "../../components/FlagImg/FlagImg";
 import LFBar from "../../components/LFBar/LFBar"
 import LFPageStyle from "../../components/LFPageStyle/LFPageStyle"
 import LFooter from "../../components/LFooter/LFooter";
+import LangButton from "../../components/LangButton/LangButton";
+
+import Brazil from "../../assets/images/brazil.png";
+import UnitedKingdom from "../../assets/images/united-kingdom.png";
+import theme from "../../theme";
 
 const TalksWorkshops = () => {
 
@@ -15,9 +22,25 @@ const TalksWorkshops = () => {
         bgcolor: 'background.paper'
     }
 
+    const { t, i18n: {changeLanguage, language}} = useTranslation()
+    const [currentlanguage, setCurrentLanguage] = useState(language)
+    const handleChangelanguage = () => {
+        const newLanguage = currentlanguage === "pt" ? "en": "pt"
+        changeLanguage(newLanguage)
+        setCurrentLanguage(newLanguage)
+    }
+
     return (
         <>
             <LFBar />
+            <Grid bgcolor={theme.palette.primary.main} item>
+                <LangButton onClick={handleChangelanguage}>
+                    {currentlanguage === "pt" ?
+                        <><Typography fontSize="13px">Switch to</Typography><FlagImg src={UnitedKingdom} /></> :
+                        <><Typography fontSize="13px">Mudar para</Typography><FlagImg src={Brazil} /></>
+                    }
+                </LangButton>
+            </Grid>
             <LFPageStyle>
                 <Container maxWidth="lg">
                     <Grid container spacing={2}>
