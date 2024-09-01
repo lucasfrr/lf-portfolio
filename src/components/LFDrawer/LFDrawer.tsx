@@ -27,6 +27,9 @@ const LFDrawer: React.FC<LFDrawerProps> = ({ onClick }) => {
                     <ListItem key="tw">
                         <Link to="/talks-and-workshops"><ListItemText primary={t("talksWorkshops")} /></Link>
                     </ListItem>
+                    <ListItem key="tw">
+                        <Link to="/blog"><ListItemText primary="Blog" /></Link>
+                    </ListItem>
                 </List>
             </Box>
         </>
