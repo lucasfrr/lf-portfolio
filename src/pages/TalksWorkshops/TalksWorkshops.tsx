@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { Avatar, Container, Divider, Grid, List, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material"
-import Groups2Icon from '@mui/icons-material/Groups2';
-import SchoolIcon from '@mui/icons-material/School';
+import { Box, Card, CardContent, Container, Grid, Typography } from "@mui/material"
 import { useTranslation } from "react-i18next";
 
 import FlagImg from "../../components/FlagImg/FlagImg";
@@ -15,12 +13,6 @@ import UnitedKingdom from "../../assets/images/united-kingdom.png";
 import theme from "../../theme";
 
 const TalksWorkshops = () => {
-
-    const customListParams = {
-        width: '100%',
-        maxWidth: 440,
-        bgcolor: 'background.paper'
-    }
 
     const { t, i18n: {changeLanguage, language}} = useTranslation()
     const [currentlanguage, setCurrentLanguage] = useState(language)
@@ -42,50 +34,41 @@ const TalksWorkshops = () => {
                 </LangButton>
             </Grid>
             <LFPageStyle>
-                <Container maxWidth="lg">
+                <Container maxWidth="md">
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <Typography color="secondary.main" variant="h1" textAlign="center">
+                            <Typography fontWeight={500} fontSize="60px" color="secondary.main">
                                 {t("talksWorkshops")}
                             </Typography>
-                            <Grid item pt={4} display="flex" justifyContent="center">
-                                <List sx={customListParams}>
-                                    <ListItem>
-                                        <ListItemAvatar>
-                                            <Avatar>
-                                                <SchoolIcon />
-                                            </Avatar>
-                                        </ListItemAvatar>
-                                        <ListItemText
-                                            primary={t("rubyOnRailsTitle")}
-                                            secondary="UFAL, 2019"
-                                        />
-                                    </ListItem>
-                                    <Divider />
-                                    <ListItem>
-                                        <ListItemAvatar>
-                                            <Avatar>
-                                                <SchoolIcon />
-                                            </Avatar>
-                                        </ListItemAvatar>
-                                        <ListItemText
-                                            primary={t("matplotlibTitle")}
-                                            secondary="UFAL, 2019"
-                                        />
-                                    </ListItem>
-                                    <Divider />
-                                    <ListItem>
-                                        <ListItemAvatar>
-                                            <Avatar>
-                                                <Groups2Icon />
-                                            </Avatar>
-                                        </ListItemAvatar>
-                                        <ListItemText
-                                            primary={t("mlOnPracticeTitle")}
-                                            secondary="Meetup GDG Arapiraca, 2017"
-                                        />
-                                    </ListItem>
-                                </List>
+                            <Grid item pt={4} display="flex">
+                                <Box>
+                                    <Card sx={{ backgroundColor: theme.palette.primary.main }}>
+                                        <CardContent>
+                                            <Typography fontWeight={500} fontSize="25px" color="#736EF5">
+                                                {t("rubyOnRailsTitle")}
+                                            </Typography>
+                                            <Typography variant="h4" color="secondary.main">
+                                                UFAL, 2019
+                                            </Typography>
+                                        </CardContent>
+                                        <CardContent>
+                                            <Typography fontWeight={500} fontSize="25px" color="#736EF5">
+                                                {t("matplotlibTitle")}
+                                            </Typography>
+                                            <Typography variant="h4" color="secondary.main">
+                                                UFAL, 2019
+                                            </Typography>
+                                        </CardContent>
+                                        <CardContent>
+                                            <Typography fontWeight={500} fontSize="25px" color="#736EF5">
+                                                {t("mlOnPracticeTitle")}
+                                            </Typography>
+                                            <Typography variant="h4" color="secondary.main">
+                                                Meetup GDG Arapiraca, 2017
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </Box>
                             </Grid>
                         </Grid>
                     </Grid>
