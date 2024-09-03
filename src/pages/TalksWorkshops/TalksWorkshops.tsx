@@ -11,8 +11,16 @@ import LangButton from "../../components/LangButton/LangButton";
 import Brazil from "../../assets/images/brazil.png";
 import UnitedKingdom from "../../assets/images/united-kingdom.png";
 import theme from "../../theme";
+import { Link } from "react-router-dom";
 
 const TalksWorkshops = () => {
+
+    const youTubeLink = "https://www.youtube.com/watch?v=o1brPM9_qnw&t=316s&ab_channel=LucasFerreiraArt"
+
+    const linkStyle = {
+        color: "inherit",
+        textDecoration: "none"
+    }
 
     const { t, i18n: {changeLanguage, language}} = useTranslation()
     const [currentlanguage, setCurrentLanguage] = useState(language)
@@ -65,6 +73,11 @@ const TalksWorkshops = () => {
                                             </Typography>
                                             <Typography variant="h4" color="secondary.main">
                                                 Meetup GDG Arapiraca, 2017
+                                            </Typography>
+                                            <Typography fontWeight={500} variant="h4" color="secondary.main">
+                                                <Link style={linkStyle} to={youTubeLink}>
+                                                    {t("linkTalk")}
+                                                </Link>
                                             </Typography>
                                         </CardContent>
                                     </Card>

@@ -9,8 +9,16 @@ import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import Brazil from "../../assets/images/brazil.png"
 import UnitedKingdom from "../../assets/images/united-kingdom.png"
+import { Link } from "react-router-dom"
+
+const parser = new DOMParser()
 
 const Blog = () => {
+
+    const linkStyle = {
+        color: "inherit",
+        textDecoration: "none"
+    }
 
     const { t, i18n: {changeLanguage, language}} = useTranslation()
     const [currentlanguage, setCurrentLanguage] = useState(language)
@@ -18,6 +26,15 @@ const Blog = () => {
         const newLanguage = currentlanguage === "pt" ? "en": "pt"
         changeLanguage(newLanguage)
         setCurrentLanguage(newLanguage)
+    }
+
+    const parseDescription = (description: any) => {
+        const parsed = parser.parseFromString(description, "text/html")
+        const result =
+            parsed.querySelector("p.medium-feed-snippet") !== null
+                ? parsed.querySelector("p.medium-feed-snippet")?.textContent
+                : parsed.querySelector("p")?.textContent
+        return result
     }
 
     const [medium, setMedium] = useState([])
@@ -39,6 +56,7 @@ const Blog = () => {
                 return {
                   title: x.title,
                   url: x.link,
+                  description: parseDescription(x.description),
                   date: x.pubDate.split(" ")[0],
                 };
               })
@@ -66,48 +84,43 @@ const Blog = () => {
                 </LangButton>
             </Grid>
             <LFPageStyle>
-                <Container maxWidth="lg">
+                <Container maxWidth="md">
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <Typography variant="h1" color="primary.contrastText" textAlign="center">
+                            <Typography fontWeight={500} fontSize="60px" color="primary.contrastText">
                                 Blog
                             </Typography>
-                            <Typography variant="h3" color="primary.contrastText" textAlign="center">
-                                Todos os meus posts são publicados no Medium mas vou deixar os links dele aqui para você ler.
+                            <Typography variant="h3" color="primary.contrastText">
+                                {t("blogDescription1")} <b>Medium</b> {t("blogDescription2")}
                             </Typography>
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item mt={3} xs={12}>
                             {isLoading ? (
-                                <Box sx={{ width: '100%' }}>
+                                <Box mt={4} sx={{ width: '100%' }}>
                                     <LinearProgress />
                                 </Box>
                             ) : (
                                 medium.map((article, index) => {
                                     return (
-                                        <div
-                                            key={`${index} container`}
-                                            aria-label="blog posts container"
-                                        >
+                                        <Grid key={index} container spacing={3}>
                                             <Box key={index}>
-                                                <a
-                                                href={article.url}
-                                                target="_blank"
-                                                rel="nofollow noopener noreferrer"
-                                                >
-                                                <Box>
-                                                    
-                                                    <Card sx={{ minWidth: 275 }}>
+                                                <Link to={article.url} style={linkStyle}>
+                                                    <Card sx={{ backgroundColor: theme.palette.primary.main }}>
                                                         <CardContent>
-                                                            {article.date}
-                                                            {article.title}
-                                                            {article.url}
+                                                            <Typography variant="h4" color="secondary.light">
+                                                                {article.date}
+                                                            </Typography>
+                                                            <Typography fontWeight={500} fontSize="25px" color="#736EF5">
+                                                                {article.title}
+                                                            </Typography>
+                                                            <Typography variant="h4" color="secondary.main">
+                                                                {article.description}
+                                                            </Typography>
                                                         </CardContent>
                                                     </Card>
-                                                    
-                                                </Box>
-                                                </a>
+                                                </Link>
                                             </Box>
-                                        </div>
+                                        </Grid>
                                     )
                                 })
                             )}
