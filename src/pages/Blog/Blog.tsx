@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next"
 import Brazil from "../../assets/images/brazil.png"
 import UnitedKingdom from "../../assets/images/united-kingdom.png"
 import { Link } from "react-router-dom"
+import { Item, Medium } from "./medium"
 
 const parser = new DOMParser()
 
@@ -28,7 +29,7 @@ const Blog = () => {
         setCurrentLanguage(newLanguage)
     }
 
-    const parseDescription = (description: any) => {
+    const parseDescription = (description: string) => {
         const parsed = parser.parseFromString(description, "text/html")
         const result =
             parsed.querySelector("p.medium-feed-snippet") !== null
@@ -37,7 +38,7 @@ const Blog = () => {
         return result
     }
 
-    const [medium, setMedium] = useState([])
+    const [mediumItems, setMediumItems] = useState<Item[]>([])
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
@@ -50,14 +51,12 @@ const Blog = () => {
           }
         )
           .then((response) => response.json())
-          .then((data) => {
-            setMedium(
+          .then((data: Medium) => {
+            setMediumItems(
               data.items.map((x) => {
                 return {
-                  title: x.title,
-                  url: x.link,
-                  description: parseDescription(x.description),
-                  date: x.pubDate.split(" ")[0],
+                  ...x,
+                  description: parseDescription(x.description) as string,
                 };
               })
             );
@@ -68,7 +67,7 @@ const Blog = () => {
           });
     
         return () => {
-          setMedium([]);
+          setMediumItems([]);
         };
       }, []);
     
@@ -100,15 +99,15 @@ const Blog = () => {
                                     <LinearProgress />
                                 </Box>
                             ) : (
-                                medium.map((article, index) => {
+                                mediumItems.map((article, index) => {
                                     return (
                                         <Grid key={index} container spacing={3}>
                                             <Box key={index}>
-                                                <Link to={article.url} style={linkStyle}>
+                                                <Link target="_blank" to={article.link} style={linkStyle}>
                                                     <Card sx={{ backgroundColor: theme.palette.primary.main }}>
                                                         <CardContent>
                                                             <Typography variant="h4" color="secondary.light">
-                                                                {article.date}
+                                                                {article.pubDate}
                                                             </Typography>
                                                             <Typography fontWeight={500} fontSize="25px" color="#736EF5">
                                                                 {article.title}
