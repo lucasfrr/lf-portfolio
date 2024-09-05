@@ -21,6 +21,11 @@ const Blog = () => {
         textDecoration: "none"
     }
 
+    const sxParams = {
+        flexDirection: "column",
+        overflowY: "auto"
+    }
+
     const { t, i18n: {changeLanguage, language}} = useTranslation()
     const [currentlanguage, setCurrentLanguage] = useState(language)
     const handleChangelanguage = () => {
@@ -82,7 +87,7 @@ const Blog = () => {
                     }
                 </LangButton>
             </Grid>
-            <LFPageStyle>
+            <LFPageStyle sx={sxParams}>
                 <Container maxWidth="md">
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
@@ -90,34 +95,36 @@ const Blog = () => {
                                 Blog
                             </Typography>
                             <Typography variant="h3" color="primary.contrastText">
-                                {t("blogDescription1")} <b>Medium</b> {t("blogDescription2")}
+                                {t("blogDescription1")} <b>Medium</b>. {t("blogDescription2")}
                             </Typography>
                         </Grid>
-                        <Grid item mt={3} xs={12}>
+                        <Grid item mb={4} mt={3} xs={12}>
                             {isLoading ? (
-                                <Box mt={4} sx={{ width: '100%' }}>
+                                <Box mt={4} sx={{ width: "100%" }}>
                                     <LinearProgress />
                                 </Box>
                             ) : (
                                 mediumItems.map((article, index) => {
                                     return (
-                                        <Grid key={index} container spacing={3}>
-                                            <Box key={index}>
+                                        <Grid key={index} container>
+                                            <Box sx={{paddingTop: 2}} key={index}>
+                                                <Box>
+                                                    <Typography variant="h4" color="secondary.light">
+                                                        {article.pubDate}
+                                                    </Typography>
+                                                </Box>
+                                                <Box>
                                                 <Link target="_blank" to={article.link} style={linkStyle}>
-                                                    <Card sx={{ backgroundColor: theme.palette.primary.main }}>
-                                                        <CardContent>
-                                                            <Typography variant="h4" color="secondary.light">
-                                                                {article.pubDate}
-                                                            </Typography>
-                                                            <Typography fontWeight={500} fontSize="25px" color="#736EF5">
-                                                                {article.title}
-                                                            </Typography>
-                                                            <Typography variant="h4" color="secondary.main">
-                                                                {article.description}
-                                                            </Typography>
-                                                        </CardContent>
-                                                    </Card>
+                                                    <Typography fontWeight={500} fontSize="25px" color="info.main">
+                                                        {article.title}
+                                                    </Typography>
                                                 </Link>
+                                                </Box>
+                                                <Box>
+                                                    <Typography variant="h4" color="secondary.main">
+                                                        {article.description}
+                                                    </Typography>
+                                                </Box>
                                             </Box>
                                         </Grid>
                                     )

@@ -47,6 +47,8 @@ const Hero = () => {
         return <Slide direction="up" ref={ref} {...props} />
     })
 
+    const sxParams = { alignItems: "center", height: "100vh" }
+
     const [openDialogCV, setOpenDialogCV] = React.useState(false)
     const handleClickOpenDialogCV = () => {setOpenDialogCV(true)}
     const handleCloseDialogCV = () => {setOpenDialogCV(false)}
@@ -82,7 +84,7 @@ const Hero = () => {
                     }
                 </LangButton>
             </Grid>
-            <LFPageStyle sx={{ alignItems: "center" }}>
+            <LFPageStyle sx={sxParams}>
                 <Container maxWidth="lg">
                     <Grid container spacing={2} alignItems="center">
                         <Grid item xs={12} md={5}>

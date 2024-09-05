@@ -22,6 +22,11 @@ const TalksWorkshops = () => {
         textDecoration: "none"
     }
 
+    const sxParams = {
+        flexDirection: "column",
+        overflowY: "auto"
+    }
+
     const { t, i18n: {changeLanguage, language}} = useTranslation()
     const [currentlanguage, setCurrentLanguage] = useState(language)
     const handleChangelanguage = () => {
@@ -41,46 +46,47 @@ const TalksWorkshops = () => {
                     }
                 </LangButton>
             </Grid>
-            <LFPageStyle>
+            <LFPageStyle sx={sxParams}>
                 <Container maxWidth="md">
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
                             <Typography fontWeight={500} fontSize="60px" color="secondary.main">
                                 {t("talksWorkshops")}
                             </Typography>
+                            <Typography variant="h3" color="primary.contrastText">
+                                {t("twDescription")}
+                            </Typography>
                             <Grid item pt={4} display="flex">
                                 <Box>
-                                    <Card sx={{ backgroundColor: theme.palette.primary.main }}>
-                                        <CardContent>
-                                            <Typography fontWeight={500} fontSize="25px" color="#736EF5">
-                                                {t("rubyOnRailsTitle")}
-                                            </Typography>
-                                            <Typography variant="h4" color="secondary.main">
-                                                UFAL, 2019
-                                            </Typography>
-                                        </CardContent>
-                                        <CardContent>
-                                            <Typography fontWeight={500} fontSize="25px" color="#736EF5">
-                                                {t("matplotlibTitle")}
-                                            </Typography>
-                                            <Typography variant="h4" color="secondary.main">
-                                                UFAL, 2019
-                                            </Typography>
-                                        </CardContent>
-                                        <CardContent>
-                                            <Typography fontWeight={500} fontSize="25px" color="#736EF5">
-                                                {t("mlOnPracticeTitle")}
-                                            </Typography>
-                                            <Typography variant="h4" color="secondary.main">
-                                                Meetup GDG Arapiraca, 2017
-                                            </Typography>
-                                            <Typography fontWeight={500} variant="h4" color="secondary.main">
-                                                <Link style={linkStyle} to={youTubeLink}>
-                                                    {t("linkTalk")}
-                                                </Link>
-                                            </Typography>
-                                        </CardContent>
-                                    </Card>
+                                    <Box sx={{paddingTop: 2}}>
+                                        <Typography fontWeight={500} fontSize="25px" color="#736EF5">
+                                            {t("rubyOnRailsTitle")}
+                                        </Typography>
+                                        <Typography variant="h4" color="secondary.main">
+                                            UFAL, 2019
+                                        </Typography>
+                                    </Box>
+                                    <Box sx={{paddingTop: 2}}>
+                                        <Typography fontWeight={500} fontSize="25px" color="#736EF5">
+                                            {t("matplotlibTitle")}
+                                        </Typography>
+                                        <Typography variant="h4" color="secondary.main">
+                                            UFAL, 2019
+                                        </Typography>
+                                    </Box>
+                                    <Box sx={{paddingTop: 2}}>
+                                        <Typography fontWeight={500} fontSize="25px" color="#736EF5">
+                                            {t("mlOnPracticeTitle")}
+                                        </Typography>
+                                        <Typography variant="h4" color="secondary.main">
+                                            Meetup GDG Arapiraca, 2017
+                                        </Typography>
+                                        <Typography fontWeight={500} variant="h4" color="secondary.main">
+                                            <Link style={linkStyle} to={youTubeLink}>
+                                                {t("linkTalk")}
+                                            </Link>
+                                        </Typography>
+                                    </Box>
                                 </Box>
                             </Grid>
                         </Grid>

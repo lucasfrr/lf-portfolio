@@ -4,7 +4,6 @@ import { styled } from "@mui/material"
 const LFPageStyle = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
     display: "flex",
-    // alignItems: "left",
     [theme.breakpoints.up("xs")]: {
         paddingTop: "50px",
         h1: {fontSize: "70px"},

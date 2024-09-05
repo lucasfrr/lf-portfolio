@@ -32,7 +32,7 @@ const LFDrawer: React.FC<LFDrawerProps> = ({ onClick }) => {
                     <ListItem key="tw">
                         <Link style={linkStyle} to="/talks-and-workshops"><ListItemText primary={t("talksWorkshops")} /></Link>
                     </ListItem>
-                    <ListItem key="tw">
+                    <ListItem key="blog">
                         <Link style={linkStyle} to="/blog"><ListItemText primary="Blog" /></Link>
                     </ListItem>
                 </List>
