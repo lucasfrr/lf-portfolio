@@ -47,6 +47,8 @@ const Hero = () => {
         return <Slide direction="up" ref={ref} {...props} />
     })
 
+    const sxParams = { alignItems: "center", height: "100vh" }
+
     const [openDialogCV, setOpenDialogCV] = React.useState(false)
     const handleClickOpenDialogCV = () => {setOpenDialogCV(true)}
     const handleCloseDialogCV = () => {setOpenDialogCV(false)}
@@ -82,16 +84,18 @@ const Hero = () => {
                     }
                 </LangButton>
             </Grid>
-            <LFPageStyle>
+            <LFPageStyle sx={sxParams}>
                 <Container maxWidth="lg">
-                    <Grid container spacing={2}>
+                    <Grid container spacing={2} alignItems="center">
                         <Grid item xs={12} md={5}>
                             <Box position="relative" textAlign="center">
                                 <LFAvatar src={AvatarImg}/>
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={7}>
-                            <Typography color="primary.contrastText" variant="h1" textAlign="center">Lucas Ferreira</Typography>
+                            <Typography fontWeight={400} color="primary.contrastText" variant="h1" textAlign="center">
+                                Lucas Ferreira
+                            </Typography>
                             <Typography color="primary.contrastText" variant="h2" textAlign="center">{t("softwareDev")}</Typography>
                             <Grid container display="flex" justifyContent="center" pt={3}>
                                 <Typography color="primary.contrastText" variant="h3" textAlign="center">{t("findMe")}</Typography>

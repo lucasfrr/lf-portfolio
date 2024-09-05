@@ -3,7 +3,7 @@ import createTheme from "@mui/material/styles/createTheme";
 
 const darkGray = "#1C1C1C"
 const ghost = "#F2F2F2"
-const deepPurple = "#4527A0"
+const deepPurple = "#736EF5"
 
 const theme = createTheme({
   palette: {
@@ -27,7 +27,7 @@ const theme = createTheme({
     }
   },
   typography: {
-    fontFamily: "JetBrains Mono",
+    fontFamily: "Roboto",
   }
 });
 

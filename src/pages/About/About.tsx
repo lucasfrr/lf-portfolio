@@ -48,11 +48,11 @@ const About = () => {
                     }
                 </LangButton>
             </Grid>
-            <LFPageStyle>
-                <Container maxWidth="lg">
+            <LFPageStyle sx={{height: "100vh"}}>
+                <Container maxWidth="md">
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <Typography color="primary.contrastText" variant="h1" textAlign="center">
+                            <Typography fontWeight={500} fontSize="60px" color="primary.contrastText" textAlign="center">
                                 {t("about")}
                             </Typography>
                         </Grid>
@@ -101,7 +101,9 @@ const About = () => {
                         </Grid>
                         <Grid container spacing={2} pl={3.5}>
                             <Grid item xs={12}>
-                                <Typography color="primary.contrastText" variant="h1" textAlign="center" pt={3}>Skills</Typography>
+                                <Typography fontWeight={500} fontSize="60px" color="primary.contrastText" textAlign="center" pt={3}>
+                                    Skills
+                                </Typography>
                             </Grid>
                             <Grid item md={12} xs={6} display="flex" justifyContent="center">
                                 <Stack

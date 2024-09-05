@@ -34,13 +34,13 @@ const Projects = () => {
                 </LangButton>
             </Grid>
             <LFPageStyle>
-                <Container maxWidth="lg">
+                <Container maxWidth="md">
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <Typography color="secondary.main" variant="h1" textAlign="center">
+                            <Typography fontWeight={500} fontSize="60px" color="secondary.main">
                                 {t("projects")}
                             </Typography>
-                            <Typography color="secondary.main" variant="h3" textAlign="center" pt={2}>
+                            <Typography color="secondary.main" variant="h3" pt={2}>
                                 {t("comingSoon")}
                             </Typography>
                         </Grid>
