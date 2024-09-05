@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Card, CardContent, Container, Grid, Typography } from "@mui/material"
+import { Box, Container, Grid, Typography } from "@mui/material"
 import { useTranslation } from "react-i18next";
 
 import FlagImg from "../../components/FlagImg/FlagImg";
