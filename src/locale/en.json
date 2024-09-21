@@ -33,6 +33,10 @@
         "blogDescription1": "All my posts are published on ",
         "blogDescription2": " So you can access them here and read them - written in portuguese",
         "linkTalk": "Link to talk here (in portuguese)",
-        "twDescription": "Talks and workshops that I did during my carrer"
+        "twDescription": "Talks and workshops that I did during my carrer",
+        "projectsDesc": "My main projects where I seek to implement some personal project and/or learning new things",
+        "prDesc1": "Backend of a chat app using Go, Postgres and Docker",
+        "prDesc2": "Live streaming server using Go, Postgres, NGINX and Docker",
+        "code": "Code"
     }
 }
