@@ -33,6 +33,10 @@
         "blogDescription1": "Todos os meus posts são publicados no ",
         "blogDescription2": "Você pode acessá-los por aqui e fazer a leitura",
         "linkTalk": "Link da palestra aqui",
-        "twDescription": "Palestras e minicursos que realizei ao longo do tempo"
+        "twDescription": "Palestras e minicursos que realizei ao longo do tempo",
+        "projectsDesc": "Meus principais projetos onde busco implementar algum projeto pessoal e/ou aprender coisas novas",
+        "prDesc1": "Backend de uma aplicação de chat utilizando Go, Postgres e Docker",
+        "prDesc2": "Servidor de live streaming utilizando Go, Postgres, NGINX e Docker",
+        "code": "Código"
     }
 }

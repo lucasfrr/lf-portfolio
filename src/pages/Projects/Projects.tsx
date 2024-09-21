@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Grid, Typography } from "@mui/material"
+import { Chip, Container, Grid, Stack, Typography } from "@mui/material"
 import { useTranslation } from "react-i18next";
 
 import LFPageStyle from "../../components/LFPageStyle/LFPageStyle"
@@ -11,6 +11,8 @@ import LangButton from "../../components/LangButton/LangButton";
 import Brazil from "../../assets/images/brazil.png";
 import UnitedKingdom from "../../assets/images/united-kingdom.png";
 import theme from "../../theme";
+import LFBox from "../../components/LFBox/LFBox";
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Projects = () => {
 
@@ -20,6 +22,14 @@ const Projects = () => {
         const newLanguage = currentlanguage === "pt" ? "en": "pt"
         changeLanguage(newLanguage)
         setCurrentLanguage(newLanguage)
+    }
+
+    const sxChip = {
+        border: `1px solid ${theme.palette.secondary.main}`,
+        transition: "border-color 0.5s",
+        '&:hover': {
+            border: `1px solid ${theme.palette.info.main}`,
+        }
     }
 
     return (
@@ -41,8 +51,44 @@ const Projects = () => {
                                 {t("projects")}
                             </Typography>
                             <Typography color="secondary.main" variant="h3" pt={2}>
-                                {t("comingSoon")}
+                                {t("projectsDesc")}
                             </Typography>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Stack
+                                direction={{ xs: "column", md: "row" }}
+                                spacing={2}
+                                alignItems="center"
+                            >
+                                <LFBox sx={{paddingTop: 2}}>
+                                    <Typography ml={1} mr={1} mt={2} fontWeight={600}>Go Chat</Typography>
+                                    <Typography ml={1} mr={1} mb={2}>{t("prDesc1")}</Typography>
+                                    <Chip
+                                        variant="outlined"
+                                        color="secondary"
+                                        label={t("code")}
+                                        component="a"
+                                        href="https://github.com/lucasfrr/go-chat"
+                                        target="blank"
+                                        icon={<GitHubIcon />}
+                                        sx={sxChip}
+                                    />
+                                </LFBox>
+                                <LFBox sx={{paddingTop: 2}}>
+                                    <Typography ml={1} mr={1} mt={2} fontWeight={600}>Live Streaming Server</Typography>
+                                    <Typography ml={1} mr={1} mb={2}>{t("prDesc2")}</Typography>
+                                    <Chip
+                                        variant="outlined"
+                                        color="secondary"
+                                        label={t("code")}
+                                        component="a"
+                                        href="https://github.com/lucasfrr/go-live-streaming"
+                                        target="blank"
+                                        icon={<GitHubIcon />}
+                                        sx={sxChip}
+                                    />
+                                </LFBox>
+                            </Stack>
                         </Grid>
                     </Grid>
                 </Container>
