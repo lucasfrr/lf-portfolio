@@ -68,8 +68,8 @@ const Hero = () => {
     const theme = useTheme()
     const fullScreen = useMediaQuery(theme.breakpoints.down("md"))
 
-    const cvPtLink = "https://drive.google.com/file/d/1FJQLVq9WHm8U7WFTVHBb0_vXSpL2fGBX/view?usp=sharing"
-    const cvEnLink = "https://drive.google.com/file/d/1881QZjCna5i8iu0YsiIXu79LK4SHcBwd/view?usp=sharing"
+    const cvPtLink = "https://drive.google.com/file/d/1lNo0fY5SChnTwYX7eKgAY4jroFOXpDvM/view?usp=sharing"
+    const cvEnLink = "https://drive.google.com/file/d/1wR7BvfHQ4duVS_HjiC7kHdpsQeYyJcGL/view?usp=sharing"
     const gitHubLink = "https://github.com/lucasfrr"
     const linkedInLink = "https://www.linkedin.com/in/lucasfrr"
 
