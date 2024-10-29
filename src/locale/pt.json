@@ -37,6 +37,7 @@
         "projectsDesc": "Meus principais projetos onde busco implementar algum projeto pessoal e/ou aprender coisas novas",
         "prDesc1": "Backend de uma aplicação de chat utilizando Go, Postgres e Docker",
         "prDesc2": "Servidor de live streaming utilizando Go, Postgres, NGINX e Docker",
+        "prDesc3": "Crawler para baixar imagens de camisas de times de futebol escrito em Go",
         "code": "Código"
     }
 }
