@@ -90,6 +90,28 @@ const Projects = () => {
                                 </LFBox>
                             </Stack>
                         </Grid>
+                        <Grid item xs={12}>
+                            <Stack
+                                direction={{ xs: "column", md: "row" }}
+                                spacing={2}
+                                alignItems="center"
+                            >
+                                <LFBox sx={{paddingTop: 2}}>
+                                    <Typography ml={1} mr={1} mt={2} fontWeight={600}>Zidane</Typography>
+                                    <Typography ml={1} mr={1} mb={2}>{t("prDesc3")}</Typography>
+                                    <Chip
+                                        variant="outlined"
+                                        color="secondary"
+                                        label={t("code")}
+                                        component="a"
+                                        href="https://github.com/lucasfrr/zidane"
+                                        target="blank"
+                                        icon={<GitHubIcon />}
+                                        sx={sxChip}
+                                    />
+                                </LFBox>
+                            </Stack>
+                        </Grid>
                     </Grid>
                 </Container>
             </LFPageStyle>
